@@ -25,7 +25,8 @@ Summary(zh_CN):	User::Utmp Perl Ä£¿é
 Name:		perl-User-Utmp
 Version:	1.01
 Release:	4
-License:	GPL/Artistic
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	dc2e12a78cc32d46e508577d26c9acce
@@ -69,7 +70,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
 mv -f $RPM_BUILD_ROOT%{perl_vendorarch}/User/example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean

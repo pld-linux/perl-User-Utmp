@@ -23,14 +23,14 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl User::Utmp
 Summary(zh_CN):	User::Utmp Perl Ä£¿é
 Name:		perl-User-Utmp
 Version:	1.01
-Release:	3
+Release:	4
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-paths.patch
 Patch1:		%{name}-strcmp-fix.patch
 Patch2:		%{name}-doc.patch
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl >= 5.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -54,7 +54,8 @@ zapisu do plików utmp.
 %patch2 -p1
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{!?_without_tests:%{__make} test}
@@ -65,7 +66,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{perl_sitearch}/User/example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+mv -f $RPM_BUILD_ROOT%{perl_vendorarch}/User/example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -73,13 +74,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%dir %{perl_sitearch}/User
-%{perl_sitearch}/User/Utmp.pm
-%dir %{perl_sitearch}/auto/User
-%dir %{perl_sitearch}/auto/User/Utmp
-%{perl_sitearch}/auto/User/Utmp/autosplit.ix
-%{perl_sitearch}/auto/User/Utmp/Utmp.bs
-%attr(755,root,root) %{perl_sitearch}/auto/User/Utmp/Utmp.so
+%dir %{perl_vendorarch}/User
+%{perl_vendorarch}/User/Utmp.pm
+%dir %{perl_vendorarch}/auto/User
+%dir %{perl_vendorarch}/auto/User/Utmp
+%{perl_vendorarch}/auto/User/Utmp/autosplit.ix
+%{perl_vendorarch}/auto/User/Utmp/Utmp.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/User/Utmp/Utmp.so
 %{_mandir}/man3/*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*

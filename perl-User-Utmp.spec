@@ -31,7 +31,7 @@ Patch0:		%{name}-paths.patch
 Patch1:		%{name}-strcmp-fix.patch
 Patch2:		%{name}-doc.patch
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl >= 5.6
+BuildRequires:	perl-devel >= 5.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

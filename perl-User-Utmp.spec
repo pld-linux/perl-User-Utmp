@@ -24,7 +24,7 @@ Summary(uk):	Модуль для Perl User::Utmp
 Summary(zh_CN):	User::Utmp Perl дё©И
 Name:		perl-User-Utmp
 Version:	1.01
-Release:	4
+Release:	5
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl

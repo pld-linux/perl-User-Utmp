@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	User
 %define	pnam	Utmp
-%include	/usr/lib/rpm/macros.perl
 Summary:	User-Utmp perl module
 Summary(pl):	Modu³ perla User-Utmp
 Name:		perl-User-Utmp
 Version:	0.02
-Release:	6
-
+Release:	7
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -22,7 +21,7 @@ User-Utmp - Perl access to utmp-style databases.
 User-Utmp - umo¿liwia dostêp do baz danych w stylu utmp.
 
 %prep
-%setup -q -n User-Utmp-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 %patch -p1
 
 %build

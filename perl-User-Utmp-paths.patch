@@ -1,7 +1,8 @@
---- User-Utmp-0.02/example.pl.perlpath	Fri Mar 26 15:46:20 1999
-+++ User-Utmp-0.02/example.pl	Wed May 12 00:35:18 1999
+diff -Nru User-Utmp-1.01/example.pl User-Utmp-1.01.new/example.pl
+--- User-Utmp-1.01/example.pl	Sat May  6 18:45:05 2000
++++ User-Utmp-1.01.new/example.pl	Mon Aug 21 18:46:11 2000
 @@ -1,4 +1,4 @@
--#! /opt/perl5/bin/perl -w
+-#! /usr/local/bin/perl -w
 +#! /usr/bin/perl -w
  
  use lib './blib/lib', './blib/arch';

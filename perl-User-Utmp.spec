@@ -26,7 +26,7 @@ Version:	1.01
 Release:	3
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-paths.patch
 Patch1:		%{name}-strcmp-fix.patch
 Patch2:		%{name}-doc.patch

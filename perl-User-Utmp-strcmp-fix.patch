@@ -1,0 +1,55 @@
+--- User-Utmp-1.01/Utmp.xs.orig	Sun Feb 27 14:43:43 2000
++++ User-Utmp-1.01/Utmp.xs	Thu Jul 11 11:23:41 2002
+@@ -227,7 +227,7 @@
+    char  *key;
+    SV    *val;
+    I32    len;
+-   STRLEN strlen;
++   STRLEN st_len;
+ 
+    hv_iterinit(entry);
+    
+@@ -240,21 +240,21 @@
+       {
+ 	 char* c_val;
+ 	    
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_user, c_val, sizeof(utent->ut_user));
+       }
+       else if(strEQ(key, "ut_id"))
+       {
+ 	 char* c_val;
+ 
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_id, c_val, sizeof(utent->ut_id));
+       }
+       else if(strEQ(key, "ut_line"))
+       {
+ 	 char* c_val;
+ 
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_line, c_val, sizeof(utent->ut_line));
+       }
+       else if(strEQ(key, "ut_pid"))
+@@ -296,15 +296,15 @@
+       {
+ 	 char* c_val;
+ 	    
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_host, c_val, sizeof(utent->ut_host));
+       }
+ #endif
+ #ifdef HAS_UT_ADDR
+       else if(strEQ(key, "ut_addr"))
+       {
+-	 memcpy(&utent->ut_addr, SvPV(val, strlen),
+-		MIN(sizeof(utent->ut_addr), strlen));
++	 memcpy(&utent->ut_addr, SvPV(val, st_len),
++		MIN(sizeof(utent->ut_addr), st_len));
+       }
+ #endif
+    }

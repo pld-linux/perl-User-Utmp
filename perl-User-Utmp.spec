@@ -27,6 +27,7 @@ Release:	4
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	dc2e12a78cc32d46e508577d26c9acce
 Patch0:		%{name}-paths.patch
 Patch1:		%{name}-strcmp-fix.patch
 Patch2:		%{name}-doc.patch

@@ -5,11 +5,12 @@ Summary:	User::Utmp perl module
 Summary(pl):	Modu³ perla User::Utmp
 Name:		perl-User-Utmp
 Version:	1.01
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-paths.patch
+Patch1:		%{name}-strcmp-fix.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,7 +23,8 @@ User::Utmp - umo¿liwia dostêp do baz danych w stylu utmp.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 perl Makefile.PL
@@ -33,14 +35,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf Changes README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz example.pl
+%doc Changes README example.pl
 %{perl_sitearch}/User/Utmp.pm
 %dir %{perl_sitearch}/auto/User/Utmp
 %{perl_sitearch}/auto/User/Utmp/autosplit.ix

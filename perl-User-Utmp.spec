@@ -1,3 +1,6 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	User
 %define		pnam	Utmp
@@ -20,30 +23,41 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl User::Utmp
 Summary(zh_CN):	User::Utmp Perl Ä£¿é
 Name:		perl-User-Utmp
 Version:	1.01
-Release:	2
-License:	GPL
+Release:	3
+License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 Patch0:		%{name}-paths.patch
 Patch1:		%{name}-strcmp-fix.patch
+Patch2:		%{name}-doc.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-User::Utmp - Perl access to utmp-style databases.
+The User::Utmp Perl module provides a simple Perl interface to utmp-
+and utmpx-style databases on UNIX systems, the most important being
+/var/run/utmp, which provides information about users currently
+logged in. There is also experimental support for writing utmp files.
 
 %description -l pl
-User::Utmp - umo¿liwia dostêp do baz danych w stylu utmp.
+Modu³ Perla User::Utmp udostêpnia prosty interfejs w Perlu to plików
+baz danych typu utmp i utmpx w systemach UNIX. Najwa¿niejszym z nich
+jest /var/run/utmp, który udostêpnia informacje o aktualnie
+zalogowanych u¿ytkownikach. Jest równie¿ eksperymentalne wsparcie dla
+zapisu do plików utmp.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
+
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,7 +65,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-cp -f example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+mv -f $RPM_BUILD_ROOT%{perl_sitearch}/User/example.pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/User/Utmp.pm
 %dir %{perl_sitearch}/auto/User
 %dir %{perl_sitearch}/auto/User/Utmp
+%{perl_sitearch}/auto/User/Utmp/autosplit.ix
 %{perl_sitearch}/auto/User/Utmp/Utmp.bs
 %attr(755,root,root) %{perl_sitearch}/auto/User/Utmp/Utmp.so
 %{_mandir}/man3/*

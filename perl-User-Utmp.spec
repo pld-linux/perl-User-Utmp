@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	User-Utmp perl module
 Summary(pl):	Modu³ perla User-Utmp
 Name:		perl-User-Utmp
@@ -8,7 +9,8 @@ Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/User/User-Utmp-%{version}.tar.gz
 Patch:		perl-User-Utmp-paths.patch
-BuildRequires:	perl >= 5.005_03-10
+BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
 Requires:	%{perl_sitearch}
 BuildRoot:	/tmp/%{name}-%{version}-root
@@ -25,7 +27,7 @@ User-Utmp - umo¿liwia dostêp do baz danych w stylu utmp.
 
 %build
 perl Makefile.PL
-make
+make OPTIMIZE="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT

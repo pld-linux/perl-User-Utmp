@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	User
-%define		pnam	Utmp
+%define	pdir	User
+%define	pnam	Utmp
 Summary:	User::Utmp Perl module
 Summary(cs):	Modul User::Utmp pro Perl
 Summary(da):	Perlmodul User::Utmp

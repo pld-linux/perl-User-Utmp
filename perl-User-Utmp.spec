@@ -23,7 +23,7 @@ Summary(uk):	Модуль для Perl User::Utmp
 Summary(zh_CN):	User::Utmp Perl дё©И
 Name:		perl-User-Utmp
 Version:	1.01
-Release:	3
+Release:	4
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz

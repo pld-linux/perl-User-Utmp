@@ -13,7 +13,7 @@ Summary(fr):	Module Perl User::Utmp
 Summary(it):	Modulo di Perl User::Utmp
 Summary(ja):	User::Utmp Perl ¥â¥¸¥å¡¼¥ë
 Summary(ko):	User::Utmp ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul User::Utmp
+Summary(nb):	Perlmodul User::Utmp
 Summary(pl):	Modu³ Perla User::Utmp
 Summary(pt):	Módulo de Perl User::Utmp
 Summary(pt_BR):	Módulo Perl User::Utmp

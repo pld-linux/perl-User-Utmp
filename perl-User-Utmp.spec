@@ -4,11 +4,11 @@ Summary(pl):	Modu³ perla User-Utmp
 Name:		perl-User-Utmp
 Version:	0.02
 Release:	3
-Copyright:	GPL
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/User/User-Utmp-%{version}.tar.gz
-Patch:		perl-User-Utmp-paths.patch
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/User/User-Utmp-%{version}.tar.gz
+Patch0:		perl-User-Utmp-paths.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl

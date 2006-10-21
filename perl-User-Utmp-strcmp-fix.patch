@@ -9,7 +9,7 @@
  
     hv_iterinit(entry);
     
-@@ -240,21 +240,21 @@
+@@ -282,14 +282,14 @@
        {
  	 char* c_val;
  	    
@@ -17,15 +17,7 @@
 +	 c_val = SvPV(val, st_len);
  	 strncpy(utent->ut_user, c_val, sizeof(utent->ut_user));
        }
-       else if(strEQ(key, "ut_id"))
-       {
- 	 char* c_val;
- 
--	 c_val = SvPV(val, strlen);
-+	 c_val = SvPV(val, st_len);
- 	 strncpy(utent->ut_id, c_val, sizeof(utent->ut_id));
-       }
-       else if(strEQ(key, "ut_line"))
+       else if (strEQ(key, "ut_line"))
        {
  	 char* c_val;
  
@@ -33,18 +25,28 @@
 +	 c_val = SvPV(val, st_len);
  	 strncpy(utent->ut_line, c_val, sizeof(utent->ut_line));
        }
-       else if(strEQ(key, "ut_pid"))
-@@ -296,15 +296,15 @@
+       else if (strEQ(key, "ut_time"))
+@@ -302,7 +302,7 @@
        {
  	 char* c_val;
+ 
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_id, c_val, sizeof(utent->ut_id));
+       }
+       else if (strEQ(key, "ut_pid"))
+@@ -342,7 +342,7 @@
+       {
+ 	 char *c_val;
  	    
 -	 c_val = SvPV(val, strlen);
 +	 c_val = SvPV(val, st_len);
  	 strncpy(utent->ut_host, c_val, sizeof(utent->ut_host));
        }
  #endif
+@@ -350,8 +350,8 @@
  #ifdef HAS_UT_ADDR
-       else if(strEQ(key, "ut_addr"))
+       else if (strEQ(key, "ut_addr"))
        {
 -	 memcpy(&utent->ut_addr, SvPV(val, strlen),
 -		MIN(sizeof(utent->ut_addr), strlen));
@@ -53,3 +55,46 @@
        }
  #endif
     }
+@@ -364,7 +364,7 @@
+    char  *key;
+    SV    *val;
+    I32    len;
+-   STRLEN strlen;
++   STRLEN st_len;
+ 
+    /* Initialize the entry */
+ 
+@@ -408,21 +408,21 @@
+       {
+ 	 char* c_val;
+ 	    
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_name, c_val, sizeof(utent->ut_name));
+       }
+       else if (strEQ(key, "ut_id"))
+       {
+ 	 char* c_val;
+ 
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_id, c_val, sizeof(utent->ut_id));
+       }
+       else if (strEQ(key, "ut_line"))
+       {
+ 	 char* c_val;
+ 
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_line, c_val, sizeof(utent->ut_line));
+       }
+       else if (strEQ(key, "ut_pid"))
+@@ -518,7 +518,7 @@
+       {
+ 	 char* c_val;
+ 
+-	 c_val = SvPV(val, strlen);
++	 c_val = SvPV(val, st_len);
+ 	 strncpy(utent->ut_host, c_val, sizeof(utent->ut_host));
+       }
+ #endif

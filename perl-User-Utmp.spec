@@ -23,16 +23,14 @@ Summary(sv):	User::Utmp Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl User::Utmp
 Summary(zh_CN):	User::Utmp Perl Ä£¿é
 Name:		perl-User-Utmp
-Version:	1.01
-Release:	5
+Version:	1.8
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	dc2e12a78cc32d46e508577d26c9acce
-Patch0:		%{name}-paths.patch
-Patch1:		%{name}-strcmp-fix.patch
-Patch2:		%{name}-doc.patch
+# Source0-md5:	e3561ae2b07f08b0c754bc351e810551
+Patch0:		%{name}-strcmp-fix.patch
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -53,8 +51,6 @@ zapisu do plików utmp.
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
 
 %build
 %{__perl} Makefile.PL \

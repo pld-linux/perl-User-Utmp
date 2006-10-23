@@ -1,8 +1,0 @@
---- User-Utmp-0.02/example.pl.perlpath	Fri Mar 26 15:46:20 1999
-+++ User-Utmp-0.02/example.pl	Wed May 12 00:35:18 1999
-@@ -1,4 +1,4 @@
--#! /usr/local/bin/perl -w
-+#! /usr/bin/perl -w
- 
- use lib './blib/lib', './blib/arch';
- use User::Utmp;

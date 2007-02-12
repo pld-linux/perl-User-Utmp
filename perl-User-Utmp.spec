@@ -6,22 +6,22 @@
 %define		pdir	User
 %define		pnam	Utmp
 Summary:	User::Utmp Perl module
-Summary(cs):	Modul User::Utmp pro Perl
-Summary(da):	Perlmodul User::Utmp
-Summary(de):	User::Utmp Perl Modul
-Summary(es):	Módulo de Perl User::Utmp
-Summary(fr):	Module Perl User::Utmp
-Summary(it):	Modulo di Perl User::Utmp
-Summary(ja):	User::Utmp Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	User::Utmp ÆŞ ¸ğÁÙ
-Summary(nb):	Perlmodul User::Utmp
-Summary(pl):	Modu³ Perla User::Utmp
-Summary(pt):	Módulo de Perl User::Utmp
-Summary(pt_BR):	Módulo Perl User::Utmp
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl User::Utmp
-Summary(sv):	User::Utmp Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl User::Utmp
-Summary(zh_CN):	User::Utmp Perl Ä£¿é
+Summary(cs.UTF-8):   Modul User::Utmp pro Perl
+Summary(da.UTF-8):   Perlmodul User::Utmp
+Summary(de.UTF-8):   User::Utmp Perl Modul
+Summary(es.UTF-8):   MÃ³dulo de Perl User::Utmp
+Summary(fr.UTF-8):   Module Perl User::Utmp
+Summary(it.UTF-8):   Modulo di Perl User::Utmp
+Summary(ja.UTF-8):   User::Utmp Perl ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
+Summary(ko.UTF-8):   User::Utmp í„ ëª¨ì¤„
+Summary(nb.UTF-8):   Perlmodul User::Utmp
+Summary(pl.UTF-8):   ModuÅ‚ Perla User::Utmp
+Summary(pt.UTF-8):   MÃ³dulo de Perl User::Utmp
+Summary(pt_BR.UTF-8):   MÃ³dulo Perl User::Utmp
+Summary(ru.UTF-8):   ĞœĞ¾Ğ´ÑƒĞ»ÑŒ Ğ´Ğ»Ñ Perl User::Utmp
+Summary(sv.UTF-8):   User::Utmp Perlmodul
+Summary(uk.UTF-8):   ĞœĞ¾Ğ´ÑƒĞ»ÑŒ Ğ´Ğ»Ñ Perl User::Utmp
+Summary(zh_CN.UTF-8):   User::Utmp Perl æ¨¡å—
 Name:		perl-User-Utmp
 Version:	1.8
 Release:	1
@@ -41,12 +41,12 @@ and utmpx-style databases on UNIX systems, the most important being
 /var/run/utmp, which provides information about users currently
 logged in. There is also experimental support for writing utmp files.
 
-%description -l pl
-Modu³ Perla User::Utmp udostêpnia prosty interfejs w Perlu to plików
-baz danych typu utmp i utmpx w systemach UNIX. Najwa¿niejszym z nich
-jest /var/run/utmp, który udostêpnia informacje o aktualnie
-zalogowanych u¿ytkownikach. Jest równie¿ eksperymentalne wsparcie dla
-zapisu do plików utmp.
+%description -l pl.UTF-8
+ModuÅ‚ Perla User::Utmp udostÄ™pnia prosty interfejs w Perlu to plikÃ³w
+baz danych typu utmp i utmpx w systemach UNIX. NajwaÅ¼niejszym z nich
+jest /var/run/utmp, ktÃ³ry udostÄ™pnia informacje o aktualnie
+zalogowanych uÅ¼ytkownikach. Jest rÃ³wnieÅ¼ eksperymentalne wsparcie dla
+zapisu do plikÃ³w utmp.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}

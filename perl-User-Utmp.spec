@@ -24,7 +24,7 @@ Summary(uk.UTF-8):	Модуль для Perl User::Utmp
 Summary(zh_CN.UTF-8):	User::Utmp Perl 模块
 Name:		perl-User-Utmp
 Version:	1.8
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl

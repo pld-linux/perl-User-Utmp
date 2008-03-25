@@ -5,34 +5,20 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	User
 %define		pnam	Utmp
-Summary:	User::Utmp Perl module
-Summary(cs.UTF-8):	Modul User::Utmp pro Perl
-Summary(da.UTF-8):	Perlmodul User::Utmp
-Summary(de.UTF-8):	User::Utmp Perl Modul
-Summary(es.UTF-8):	Módulo de Perl User::Utmp
-Summary(fr.UTF-8):	Module Perl User::Utmp
-Summary(it.UTF-8):	Modulo di Perl User::Utmp
-Summary(ja.UTF-8):	User::Utmp Perl モジュール
-Summary(ko.UTF-8):	User::Utmp 펄 모줄
-Summary(nb.UTF-8):	Perlmodul User::Utmp
-Summary(pl.UTF-8):	Moduł Perla User::Utmp
-Summary(pt.UTF-8):	Módulo de Perl User::Utmp
-Summary(pt_BR.UTF-8):	Módulo Perl User::Utmp
-Summary(ru.UTF-8):	Модуль для Perl User::Utmp
-Summary(sv.UTF-8):	User::Utmp Perlmodul
-Summary(uk.UTF-8):	Модуль для Perl User::Utmp
-Summary(zh_CN.UTF-8):	User::Utmp Perl 模块
+Summary:	User::Utmp - Perl access to utmp- and utmpx-style databases
+Summary(pl.UTF-8):	User::Utmp - dostęp z poziomu Perla do baz typu utmp i utmpx
 Name:		perl-User-Utmp
 Version:	1.8
 Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/User/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	e3561ae2b07f08b0c754bc351e810551
 Patch0:		%{name}-strcmp-fix.patch
-BuildRequires:	rpm-perlprov >= 4.1-13
+URL:		http://search.cpan.org/dist/User-Utmp/
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

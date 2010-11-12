@@ -9,7 +9,7 @@ Summary:	User::Utmp - Perl access to utmp- and utmpx-style databases
 Summary(pl.UTF-8):	User::Utmp - dostęp z poziomu Perla do baz typu utmp i utmpx
 Name:		perl-User-Utmp
 Version:	1.8
-Release:	4
+Release:	5
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl

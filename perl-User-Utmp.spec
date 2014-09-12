@@ -66,7 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/User
 %dir %{perl_vendorarch}/auto/User/Utmp
 %{perl_vendorarch}/auto/User/Utmp/autosplit.ix
-%{perl_vendorarch}/auto/User/Utmp/Utmp.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/User/Utmp/Utmp.so
 %{_mandir}/man3/*
 %dir %{_examplesdir}/%{name}-%{version}

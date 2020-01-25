@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	User
 %define		pnam	Utmp
 Summary:	User::Utmp - Perl access to utmp- and utmpx-style databases
